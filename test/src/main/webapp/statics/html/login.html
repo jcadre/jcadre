@@ -5,7 +5,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 	<META content="IE=11.0000"  http-equiv="X-UA-Compatible">
 	<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<TITLE>登录页面</TITLE>
-	<SCRIPT src="statics/js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
+	<SCRIPT src="../js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
 
 	<STYLE>
 		body{
@@ -39,7 +39,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 			box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
 		}
 		.u_logo{
-			background: url("statics/img/username.png") no-repeat;
+			background: url("../img/username.png") no-repeat;
 			padding: 10px 10px;
 			position: absolute;
 			top: 43px;
@@ -47,7 +47,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 
 		}
 		.p_logo{
-			background: url("statics/img/password.png") no-repeat;
+			background: url("../img/password.png") no-repeat;
 			padding: 10px 10px;
 			position: absolute;
 			top: 12px;
@@ -57,7 +57,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 			text-decoration: none;
 		}
 		.tou{
-			background: url("statics/img/tou.png") no-repeat;
+			background: url("../img/tou.png") no-repeat;
 			width: 97px;
 			height: 92px;
 			position: absolute;
@@ -65,7 +65,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 			left: 140px;
 		}
 		.left_hand{
-			background: url("statics/img/left_hand.png") no-repeat;
+			background: url("../img/left_hand.png") no-repeat;
 			width: 32px;
 			height: 37px;
 			position: absolute;
@@ -73,7 +73,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 			left: 150px;
 		}
 		.right_hand{
-			background: url("statics/img/right_hand.png") no-repeat;
+			background: url("../img/right_hand.png") no-repeat;
 			width: 32px;
 			height: 37px;
 			position: absolute;
@@ -81,7 +81,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 			right: -64px;
 		}
 		.initial_left_hand{
-			background: url("statics/img/hand.png") no-repeat;
+			background: url("../img/hand.png") no-repeat;
 			width: 30px;
 			height: 20px;
 			position: absolute;
@@ -89,7 +89,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 			left: 100px;
 		}
 		.initial_right_hand{
-			background: url("statics/img/hand.png") no-repeat;
+			background: url("../img/hand.png") no-repeat;
 			width: 30px;
 			height: 20px;
 			position: absolute;
@@ -97,7 +97,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 			right: -112px;
 		}
 		.left_handing{
-			background: url("statics/img/left-handing.png") no-repeat;
+			background: url("../img/left-handing.png") no-repeat;
 			width: 30px;
 			height: 20px;
 			position: absolute;
@@ -105,7 +105,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 			left: 139px;
 		}
 		.right_handinging{
-			background: url("statics/img/right_handing.png") no-repeat;
+			background: url("../img/right_handing.png") no-repeat;
 			width: 30px;
 			height: 20px;
 			position: absolute;
@@ -145,8 +145,9 @@ xmlns="http://www.w3.org/1999/xhtml">
 		});
 		
 		$("#loginBtn").click(function(){
+			alert(1);
 			$.ajax({
-	            url:'/test/hello',
+	            url:'/test/loginTest',
 	            data:{name:$("#loginname").val(), password:$("#password").val()},
 	            type:'post',
 	            dataType:'json',

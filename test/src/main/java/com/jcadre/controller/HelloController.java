@@ -14,10 +14,15 @@ import com.jcadre.domain.User;
  */
 @Controller
 public class HelloController {
-	@RequestMapping("/hello")
+	@RequestMapping(value="/loginTest")
 	@ResponseBody
 	public User hello(String name, String password) {
 		User user = new User(name, password);
 		return user;
+	}
+	
+	@RequestMapping(value="/login")
+	public String login(String name, String password) {
+		return "login";
 	}
 }
