@@ -6,7 +6,7 @@ xmlns="http://www.w3.org/1999/xhtml">
 	<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<TITLE>登录页面</TITLE>
 	<SCRIPT src="statics/js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
-
+	<script src="statics/js/md5.js" type="text/javascript"></script>
 	<STYLE>
 		body{
 			background: #ebebeb;
@@ -147,12 +147,14 @@ xmlns="http://www.w3.org/1999/xhtml">
 		$("#loginBtn").click(function(){
 			$.ajax({
 	            url:'/test/auth/login',
-	            data:{loginName:$("#loginname").val(), password:$("#password").val()},
+	            data:{loginName:$("#loginname").val(), password:hex_md5($("#password").val())},
 	            type:'post',
 	            dataType:"text",
 	            success:function(msg){
 	            	if(msg==="success"){
 	            		 window.location = "/test/index";
+	            	}else if(msg==="failure"){
+	            		alert("用户名密码错");
 	            	}
 	            }
 	        })

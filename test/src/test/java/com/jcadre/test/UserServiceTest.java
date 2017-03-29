@@ -31,7 +31,7 @@ public class UserServiceTest {
 	@Autowired
 	private IUserService userService;
 	
-	@Test
+	//@Test
 	public void checkPwdTest(){
 		User user = userService.checkPwd("jiangchao", CommonUtil.getMD5("123s456"));
 		System.out.println(user);
