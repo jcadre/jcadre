@@ -36,7 +36,7 @@ public class AuthController {
 	public String login(@RequestParam("loginName") String loginName, @RequestParam("password") String password) {
 		Subject currentUser = SecurityUtils.getSubject();  
         String result = "login";  
-        if (!currentUser.isAuthenticated()) {  
+        if (currentUser != null && !currentUser.isAuthenticated()) {  
             result = login(currentUser,loginName,password);  
         }else{//重复登录
             ShiroUser shiroUser = (ShiroUser) currentUser.getPrincipal();  

@@ -146,11 +146,14 @@ xmlns="http://www.w3.org/1999/xhtml">
 		
 		$("#loginBtn").click(function(){
 			$.ajax({
-	            url:'/test/loginTest',
-	            data:{name:$("#loginname").val(), password:$("#password").val()},
+	            url:'/test/auth/login',
+	            data:{loginName:$("#loginname").val(), password:$("#password").val()},
 	            type:'post',
-	            dataType:'json',
+	            dataType:"text",
 	            success:function(msg){
+	            	if(msg==="success"){
+	            		 window.location = "/test/index";
+	            	}
 	            }
 	        })
 		})
