@@ -2,8 +2,6 @@
  * Copyright © 2017 Jcadre. All rights reserved.
  * 
  * @Title: SnowflakeIdWorker.java 
- * @Prject: soamRebuild
- * @Package: com.goldwind.common.utils 
  * @Description: 自增长id算法（基于雪花算法）
  * @author: JC  
  * @date: 2017年3月20日 上午9:28:38 
