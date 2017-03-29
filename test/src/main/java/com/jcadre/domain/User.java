@@ -136,12 +136,13 @@ public class User implements Serializable{
 
 	public User(){}
 
-	public User(String id, String loginName, String password, String nickName, Integer sex){
+	public User(String id, String loginName, String password, String nickName, Integer sex, Date birthday){
 		this.id = id;
 		this.loginName = loginName;
 		this.ctime = new Date();
 		this.password = password;
 		this.nickName = nickName;
 		this.sex = sex;
+		this.birthday = birthday;
 	}
 }

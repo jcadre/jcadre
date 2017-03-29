@@ -2,5 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jcadre.mapper.UserMapper">
-
+	<!-- 新增用户 -->
+	<insert id="createUser" parameterType="user" keyProperty="id">
+		insert into sys_user(id, login_name, ctime, password, nick_name, sex, status_, birthday)
+		values(#{id}, #{loginName}, #{ctime}, #{password}, #{nickName,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{status}, #{birthday,jdbcType=DATE})
+	</insert>
+	<!-- 根据登录名查询用户,筛选掉软删除的用户 -->
+	<select id="findUserByLoginName" parameterType="string" resultType="user">
+        select * from sys_user where login_name = #{loginName} and status_ != ${@com.jcadre.constant.UserConstant@STATUS_DEL}
+    </select>
 </mapper>

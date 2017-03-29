@@ -25,4 +25,10 @@ public interface IUserService {
 	 * @return
 	 */
 	public User findUserByLoginName(String loginName);
+	
+	/**
+	 * 创建用户
+	 * @param user 用户对象
+	 */
+	public void createUser(User user);
 }
