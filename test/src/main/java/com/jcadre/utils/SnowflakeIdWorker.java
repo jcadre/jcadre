@@ -1,5 +1,5 @@
 /**   
- * Copyright © 2017 金风科技. All rights reserved.
+ * Copyright © 2017 Jcadre. All rights reserved.
  * 
  * @Title: SnowflakeIdWorker.java 
  * @Prject: soamRebuild
