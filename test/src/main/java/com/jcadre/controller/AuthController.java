@@ -50,7 +50,7 @@ public class AuthController {
                 result = login(currentUser,loginName,password);  
             }  
         }
-        log.info("username:{}  and pwd:{}", loginName, password);
+        log.debug("username:{}  and pwd:{}", loginName, password);
         return result;  
 	}
 	
