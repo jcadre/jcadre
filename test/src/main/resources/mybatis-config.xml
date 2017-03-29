@@ -10,7 +10,7 @@
 	
 	<!-- 实体类,简称 -设置别名 -->
 	<typeAliases>
-		<typeAlias alias="user" type="com.goldwind.domain.User" />
+		<typeAlias alias="user" type="com.jcadre.domain.User" />
 	</typeAliases>
 	<!-- 说明：如果xxMapper.xml配置文件放在和xxMapper.java统一目录下，mappers也可以省略，因为org.mybatis.spring.mapper.MapperFactoryBean默认会去查找与xxMapper.java相同目录和名称的xxMapper.xml -->
 	<mappers>

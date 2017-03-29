@@ -13,14 +13,13 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>   
 	</context:component-scan> 
 
-	<context:property-placeholder location="classpath:config/*.properties"/>
+	<context:property-placeholder location="classpath:*.properties"/>
 
 	<!-- 1. 数据源 : DriverManagerDataSource -->
-	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="${jdbc.driver}" />
-		<property name="url" value="${jdbc.url}" /> 
-		<property name="username" value="${jdbc.username}" />
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.url}" /> 
+		<property name="user" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
 	</bean>
 

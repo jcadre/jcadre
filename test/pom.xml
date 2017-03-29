@@ -11,9 +11,14 @@
 		<fastjson.version>1.2.29</fastjson.version>
 		<shiro.version>1.3.2</shiro.version>
 		<servlet.version>3.1.0</servlet.version>
-		<mybatis.version>3.4.2</mybatis.version>  
-        <mybatis.spring.version>1.3.0</mybatis.spring.version>  
-        <mysql.connector.version>6.0.6</mysql.connector.version>  
+		<mybatis.version>3.4.2</mybatis.version>
+        <mybatis.spring.version>1.3.0</mybatis.spring.version>
+        <mysql.connector.version>5.1.36</mysql.connector.version>
+        <c3p0.version>0.9.1.2</c3p0.version>
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <logback.version>1.2.2</logback.version>
+        <logback.spring.version>0.1.4</logback.spring.version>
 	</properties>
 
 	<dependencies>
@@ -22,6 +27,7 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>${servlet.version}</version>
+            <scope>provided</scope>
         </dependency>
         <!-- spring -->
 		<dependency>
@@ -39,6 +45,16 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-tx</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency> 
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-jdbc</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
 		<!-- fastjson -->
 		<dependency>  
 		    <groupId>com.alibaba</groupId>  
@@ -86,5 +102,37 @@
             <artifactId>mysql-connector-java</artifactId>  
             <version>${mysql.connector.version}</version>  
         </dependency>  
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>${c3p0.version}</version>
+        </dependency>
+        
+        <!-- log -->
+        <dependency>  
+		    <groupId>log4j</groupId>  
+		    <artifactId>log4j</artifactId>  
+		    <version>${log4j.version}</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>org.slf4j</groupId>  
+		    <artifactId>slf4j-api</artifactId>  
+		    <version>${slf4j.version}</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>ch.qos.logback</groupId>  
+		    <artifactId>logback-classic</artifactId>  
+		    <version>${logback.version}</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>ch.qos.logback</groupId>  
+		    <artifactId>logback-core</artifactId>  
+		    <version>${logback.version}</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>org.logback-extensions</groupId>  
+		    <artifactId>logback-ext-spring</artifactId>  
+		    <version>${logback.spring.version}</version>  
+		</dependency>  
 	</dependencies>
 </project>

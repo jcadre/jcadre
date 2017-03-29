@@ -10,6 +10,8 @@ import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,6 +27,9 @@ import com.jcadre.domain.ShiroUser;
 @Controller
 @RequestMapping(value = "/auth")  
 public class AuthController {
+	
+	private Logger log = LoggerFactory.getLogger(AuthController.class);
+	
 	/**
 	 * 登录
 	 * @param loginName 登录名
@@ -44,7 +49,8 @@ public class AuthController {
                 currentUser.logout();  
                 result = login(currentUser,loginName,password);  
             }  
-        }  
+        }
+        log.info("username:{}  and pwd:{}", loginName, password);
         return result;  
 	}
 	
