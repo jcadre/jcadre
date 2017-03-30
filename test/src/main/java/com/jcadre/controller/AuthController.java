@@ -45,7 +45,7 @@ public class AuthController {
             result = login(currentUser,loginName,password);  
         }else{//重复登录
             ShiroUser shiroUser = (ShiroUser) currentUser.getPrincipal();  
-            if(!shiroUser.getLoginName().equalsIgnoreCase(loginName)){//如果登录名不同  
+            if(shiroUser != null && !shiroUser.getLoginName().equalsIgnoreCase(loginName)){//如果登录名不同  
                 currentUser.logout();  
                 result = login(currentUser,loginName,password);  
             }  
